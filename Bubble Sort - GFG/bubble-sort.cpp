@@ -30,9 +30,9 @@ class Solution
             {
               if(arr[j+1]<arr[j])
               {
-                  t=arr[j+1];
-                  arr[j+1]=arr[j];
-                  arr[j]=t;
+                  
+                  swap(&arr[j+1],&arr[j]);
+               
                   
               }
             }
