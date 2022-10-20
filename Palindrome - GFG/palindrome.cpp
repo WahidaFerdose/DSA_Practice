@@ -14,12 +14,33 @@ class Solution
 	public:
 		string is_palindrome(int n)
 		{
-		    string s=to_string(n);
-		    string y=s;
-		    reverse(s.begin(),s.end());
-		    if (s==y)
-		    return "Yes";
-		    return "No";
+		    string n2;
+		    n2=to_string(n);
+		    int l=n2.length();
+
+		    int m;
+		    char temp;
+
+            for (int i = 0; i <l/2 ; i++)
+            {
+                temp = n2[i];
+                n2[i] = n2[l - i - 1];
+                n2[l - i - 1] = temp;
+            }
+
+
+            m = stoi(n2);
+
+            if(m==n)
+            {
+                return "Yes";
+            }
+            else
+            {
+               return "No";
+            }
+		   
+		    
 
 		}
 };
