@@ -39,6 +39,16 @@ class Solution
             {
                return "No";
             }
+			
+			/*
+			
+					   string s=to_string(n);
+		    string y=s;
+		    reverse(s.begin(),s.end());
+		    if (s==y)
+		    return "Yes";
+		    return "No"; */
+
 		   
 		    
 
