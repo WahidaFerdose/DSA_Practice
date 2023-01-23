@@ -11,83 +11,43 @@ double MedianOfArrays(vector<int>& array1, vector<int>& array2);
 
 class Solution{
     public:
-    double MedianOfArrays(vector<int>& array1, vector<int>& array2)
+    double MedianOfArrays(vector<int>& ar1, vector<int>& ar2)
     {
-        int N=array1.size();
-        int M=array2.size();
-        int p=N+M;
-        int ar3[p];
-         
-        int i,j;
+        int i = 0; 
+    int j = 0; 
+    int count;
+    int m1 = -1, m2 = -1;
+    
+    int n=ar1.size();
+        int m=ar2.size();
 
-        i=0;
-        j=0;
-        int m=0;
-
-          while(i<N && j<M)
-            {
-                if(array1[i]<array2[j])
-                {
-                    ar3[m]=array1[i];
-                    i++;
-
-
-                }
-                else
-                {
-                    ar3[m]=array2[j];
-                    j++;
-                }
-
-                m++;
-
-
-            }
-
-             while(i<N)
-            {
-
-                    ar3[m]=array1[i];
-                    i++;
-
-                m++;
-
-
-            }
-
-
-              while(j<M)
-            {
-
-                    ar3[m]=array2[j];
-                    j++;
-
-                m++;
-
-            }
-            
-            
-          int x,y;
-            double med=0.0;
-
-		    if(p%2!=0)
-		    {
-		        x=ar3[((p-1)+1)/2];
-		        med=x;
-		    }
-		    else
-		    {
-		        x=ar3[((p-1))/2];
-
-             y=ar3[((p-1)/2)+1];
-
-             med=(1.0*(x+y)/2);
-		    }
-
-		    return med;
-		   
-
-
+    for (count = 0; count <= (m + n) / 2; count++) {
+        
+        m2 = m1;
+        if (i != n && j != m) {
+            m1 = (ar1[i] > ar2[j]) ? ar2[j++] : ar1[i++];
+        }
+        else if (i < n) {
+            m1 = ar1[i++];
+        }
+        // for case when j<m,
+        else {
+            m1 = ar2[j++];
+        }
+    }
+    // Since there are (n+m) elements,
+    // There are following two cases
+    // if n+m is odd then the middle
+    // index is median i.e. (m+n)/2
+    // other wise median will be average of elements
+    // at index ((m+n)/2 - 1) and (m+n)/2
+    // in the array obtained after merging ar1 and ar2
+    if ((m + n) % 2 == 1) {
+        return m1;
+    }
+    else {
+        return (1.0*(m1 + m2) / 2);
+    }
 
 
     
