@@ -17,16 +17,16 @@ class Solution{
             return -1;
         }
         
-        if(v[n-1]<x)
+        if(v[n-1]<=x)
         {
             return (n-1);
         }
         
-        long long l=0,h=n-1;
+        long long l=0,h=n-2;
         
         while(l<=h)
         {
-            m=l+(h-l)/2;
+            m=(h+l)/2;
             
             if(v[m]==x)
             {
