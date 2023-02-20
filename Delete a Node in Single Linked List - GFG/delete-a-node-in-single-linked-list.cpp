@@ -87,6 +87,12 @@ struct Node
 Node* deleteNode(Node *head,int x)
 {
     Node *temp=head;
+    
+    
+    if(head==NULL)
+    {
+        return head;
+    }
    
     
     if(x==1)
