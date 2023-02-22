@@ -92,17 +92,7 @@ struct Node
 void addNode(Node *head, int pos, int data)
 {
     Node* temp=new Node(data);
-   if(pos==-1)
-   {
-       temp->next=head;
-       head->prev=temp;
-       temp->prev=NULL;
-       head=temp;
-
-     return;
-   }
-   
-   
+ 
    Node* t2=head;
    
    int c=0;
