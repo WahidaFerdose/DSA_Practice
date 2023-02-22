@@ -38,11 +38,27 @@ class Solution{
   public:
     //Function to insert a node at the beginning of the linked list.
     Node *insertAtBegining(Node *head, int x) {
-       Node *temp= new Node(x);
-       temp->next=head;
-       head=temp;
        
-      // return temp;
+        Node *temp= new Node(x);
+       
+       if(head==NULL)
+       {
+          
+           head=temp;
+       
+           
+       }
+       
+       else
+       {
+        
+          temp->next=head;
+          head=temp;
+           
+       }
+      
+       
+       return head;
     }
     
     
