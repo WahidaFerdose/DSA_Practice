@@ -12,8 +12,27 @@ class Solution {
 public:
     ListNode* oddEvenList(ListNode* head) {
       
+        
+     if(!head || !head->next || !head->next->next) return head;
+        
+        ListNode *odd = head;
+        ListNode *even = head->next;
+        ListNode *even_start = head->next;
+        
+        while(odd->next && even->next){
+            odd->next = even->next;
+            odd = even->next;//Connect all odds
+            even->next = odd->next;  //Connect all evens
+            even = odd->next;
+        }
+        
+        odd->next = even_start;   //Place the first even node after the last odd node.
+        return head;  
     
-        if(!head || !head->next || !head->next->next) return head;
+       /* 
+       Most voted Approach
+       
+       if(!head || !head->next || !head->next->next) return head;
         
         ListNode *odd = head;
         ListNode *even = head->next;
@@ -26,7 +45,7 @@ public:
             even = even->next;
         }
         odd->next = even_start;   //Place the first even node after the last odd node.
-        return head; 
+        return head;  */
         
         
       /* 
