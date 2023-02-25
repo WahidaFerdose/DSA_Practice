@@ -98,7 +98,7 @@ class Solution{
        int n=a.size();
        int s=0,e=n-1;
        
-           while(s<=e && n!=0)
+           while(s<=e)
            {
                if(a[s]!=a[e])
                {
@@ -106,7 +106,7 @@ class Solution{
                }
                s++;
                e--;
-               n--;
+          
            }
            return 1;
    
