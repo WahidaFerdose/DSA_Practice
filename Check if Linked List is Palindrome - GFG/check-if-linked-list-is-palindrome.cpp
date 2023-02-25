@@ -85,8 +85,7 @@ class Solution{
     
     bool isPalindrome(Node *head)
    {
-       //Approach 1
-       
+       //<!-------Approach 1---------->
        vector<int> a;
        Node *temp=head;
        
@@ -96,13 +95,10 @@ class Solution{
            temp=temp->next;
        }
        
-       
        int n=a.size();
        int s=0,e=n-1;
        
-       for(int i=0;i<n;i++)
-       {
-           while(s<=e)
+           while(s<=e && n!=0)
            {
                if(a[s]!=a[e])
                {
@@ -110,10 +106,9 @@ class Solution{
                }
                s++;
                e--;
+               n--;
            }
-           
            return 1;
-       }
    
   
    }
