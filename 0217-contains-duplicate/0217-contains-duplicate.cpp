@@ -35,7 +35,7 @@ public:
         else
             return 0;*/
         
-       
+       /* sorting
        sort(nums.begin(),nums.end());
         
         for(int i=0;i<n-1;i++)
@@ -44,7 +44,16 @@ public:
                 return 1;
                 
         }
-        return 0;
+        return 0;*/
+        
+      map<int,int> mp;
+          for(auto i : nums) mp[i]++;
+          bool flag = false;
+          for(auto i : mp){
+              if(i.second >= 2) return true;
+          }
+          return false;
+        
         
         
     }
