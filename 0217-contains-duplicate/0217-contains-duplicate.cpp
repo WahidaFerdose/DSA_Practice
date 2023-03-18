@@ -25,7 +25,7 @@ public:
         //set approach
         
         
-        set<int> s;
+        /*set<int> s;
         s.insert(nums.begin(),nums.end());
         int k=s.size();
         
@@ -33,7 +33,19 @@ public:
         if(n>k)
             return 1;
         else
-            return 0;
+            return 0;*/
+        
+       
+       sort(nums.begin(),nums.end());
+        
+        for(int i=0;i<n-1;i++)
+        {
+            if(nums[i]==nums[i+1])
+                return 1;
+                
+        }
+        return 0;
+        
         
     }
 };
