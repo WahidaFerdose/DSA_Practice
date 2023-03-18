@@ -1,7 +1,7 @@
 class Solution {
-  
+   
 public:
-     long long powerMod(int a, long long b, int mod) {
+long long powerMod(int a, long long b, int mod) {
         if(b == 0)
             return 1;
         long long x = powerMod(a, b/2, mod);
@@ -15,5 +15,4 @@ public:
         int mod = 1e9+7;
         return (powerMod(5, (n + 1) / 2, mod) * powerMod(4, n / 2, mod)) % mod;
     }
-    
 };
