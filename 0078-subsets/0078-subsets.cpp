@@ -14,6 +14,9 @@ class Solution {
         int element=nums[i];
         output.push_back(element);
         solve(nums,output,i+1,ans);
+        output.pop_back();
+        
+      
     }
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
