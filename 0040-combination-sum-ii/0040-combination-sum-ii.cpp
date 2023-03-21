@@ -1,15 +1,12 @@
 class Solution {
     void solve(vector<int>& a, int ind, int t,vector<int>& op,vector<vector<int>>& ans)
     {
-      
             if(t==0)
             {
                 ans.push_back(op);
                 return;
-               
             }
-            
-      
+        
         
         for(int i=ind;i<a.size();i++)
         {
@@ -22,7 +19,7 @@ class Solution {
             op.pop_back();
         }
         
-       // solve(a,ind+1,t,op,ans);
+        //solve(a,ind+1,t,op,ans);
         
         
         
