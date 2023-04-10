@@ -33,60 +33,22 @@ class Solution
 {
     public:
     //Function to reverse a linked list.
-   
-   
-   struct Node* reverseL(struct Node *head, struct Node *curr, struct Node *pre)
-   {
-       if(curr==NULL)
-       {
-           head=pre;
-           return head;
-       }
-       
-       Node* forward=curr->next;
-       Node* ans =reverseL(head,forward,curr);
-       curr->next=pre;
-       
-       return ans;
- 
-   }
-   
     struct Node* reverseList(struct Node *head)
     {
-        
-    if(head==NULL || head->next==NULL)
-        {
-            return head;
-        }
-        
-        Node* curr=head;
-        Node* pre=NULL;
-        
-       
-        Node* tempHead=reverseL(head,curr,pre);
-        
-        
-        return tempHead;
-        
-       
-       
-       
-       
-       /*Iterative Method
-       Node* temp=NULL;
-        Node* curr=head;
-        Node* pre=NULL;
-        
+
+        Node *curr=head;
+        Node *prev=NULL;
+        Node *temp;
         while(curr!=NULL)
         {
-            
-            temp=curr->next;
-            curr->next=pre;
-            pre=curr;
-            curr=temp;
+        temp=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=temp;
+    
         }
-        head=pre;
-        return pre;*/
+        
+        return prev;
     }
     
 };
